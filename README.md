@@ -27,5 +27,5 @@ After building, run the program as follows:
 ```
 Failure to meet the above syntax will result in a help menu with more detailed information. With the included input/output directories (and in the `build/` directory), the command can be run as follows:
 ```
-	./normalise ../Images ../Out
+	./normalise ../Images/ ../Out/
 ```
