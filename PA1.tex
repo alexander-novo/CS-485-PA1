@@ -1,5 +1,5 @@
 % This tells the program how to initially format my document.
-\documentclass{article}
+\documentclass[dvipsnames]{article}
 
 % List of packages to be included for the use of special commands and symbols.
 \usepackage{amsmath,amssymb,amsthm}
@@ -17,6 +17,35 @@
 
 \usepackage{tikz}
 \usepackage{float}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{multicol}
+
+\definecolor{lispgreen}{RGB}{154, 228, 151}
+\definecolor{lightgray}{gray}{0.97}
+\definecolor{violet}{rgb}{0.8, 0, 0.7}
+
+\lstdefinestyle{cpp}{
+    language=C++,
+	basicstyle=\fontsize{9}{11}\ttfamily,
+	keywordstyle=\color{blue}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	commentstyle=\color{OliveGreen}\ttfamily,
+	morecomment=[l][\color{magenta}]{\#},
+	tabsize=2,
+    showstringspaces=false,
+    backgroundcolor=\color{lightgray},
+    numbers=left,
+    stepnumber=5,
+    numberstyle=\tiny
+}
+\lstdefinestyle{out}{
+    basicstyle=\fontsize{9}{11}\ttfamily,
+    tabsize=4,
+    backgroundcolor=\color{lightgray},
+    morecomment=[l][\color{OliveGreen}]{\#},
+    numbers=none
+}
 
 \setlength{\parindent}{0cm}
 
@@ -72,13 +101,138 @@ Unfortunately, since this an overdetermined system, an exact solution is unlikel
 \]
 for all of our fixed points.
 
-\begin{figure}
-	\begin{tikzpicture}
-		\node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.1\textwidth]{Sample1-1.png}};
-		\begin{scope}[x={(image.south east)},y={(image.north west)}]
-			\draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
-		\end{scope}
-	\end{tikzpicture}
+% \begin{figure}
+% 	\begin{tikzpicture}
+% 		\node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.1\textwidth]{Sample1-1.png}};
+% 		\begin{scope}[x={(image.south east)},y={(image.north west)}]
+% 			\draw[red,ultra thick,rounded corners] (0.62,0.65) rectangle (0.78,0.75);
+% 		\end{scope}
+% 	\end{tikzpicture}
+% \end{figure}
+
+Unfortunately, this transformation goes from our original image to our normalised image, which is smaller, so multiple pixels in the original images might map to the same pixel in our normalised image. To fix this, we instead examine the transformation
+\[
+	P \approx \tilde{A}^{-1}(\hat{P} - \tilde{b}),
+\]
+which allows us to go from pixels in our normalised image to pixels in our original image.
+
+\newpage
+
+\subsection*{Recovered parameters}
+\lstset{style=out}
+\lstinputlisting[float=h!, multicols=3,caption={Recovered affine transformation parameters},label={out:parameters}]{parameters.out}
+
+\newpage
+
+\subsection*{Normalised images}
+\begin{multicols}{3}
+\begin{figure}[H]
+	\centering\includegraphics{Out-JPG/S1/1.jpg}
+	\caption{S1/1.pgm}
 \end{figure}
+\begin{figure}[H]
+	\centering\includegraphics{Out-JPG/S1/2.jpg}
+	\caption{S1/2.pgm}
+\end{figure}
+
+\begin{figure}[H]
+	\centering\includegraphics{Out-JPG/S1/3.jpg}
+	\caption{S1/3.pgm}
+\end{figure}
+
+\begin{figure}[H]
+	\centering\includegraphics{Out-JPG/S1/4.jpg}
+	\caption{S1/4.pgm}
+\end{figure}
+
+\begin{figure}[H]
+	\centering\includegraphics{Out-JPG/S1/5.jpg}
+	\caption{S1/5.pgm}
+\end{figure}
+
+\begin{figure}[H]
+	\centering\includegraphics{Out-JPG/S1/6.jpg}
+	\caption{S1/6.pgm}
+\end{figure}
+
+\begin{figure}[H]
+	\centering\includegraphics{Out-JPG/S1/7.jpg}
+	\caption{S1/7.pgm}
+\end{figure}
+
+\begin{figure}[H]
+	\centering\includegraphics{Out-JPG/S1/8.jpg}
+	\caption{S1/8.pgm}
+\end{figure}
+
+\begin{figure}[H]
+	\centering\includegraphics{Out-JPG/S1/9.jpg}
+	\caption{S1/9.pgm}
+\end{figure}
+
+\begin{figure}[H]
+	\centering\includegraphics{Out-JPG/S1/10.jpg}
+	\caption{S1/10.pgm}
+\end{figure}
+
+\begin{figure}[H]
+	\centering\includegraphics{Out-JPG/S1/1.jpg}
+	\caption{S2/1.pgm}
+\end{figure}
+\begin{figure}[H]
+	\centering\includegraphics{Out-JPG/S2/2.jpg}
+	\caption{S2/2.pgm}
+\end{figure}
+
+\begin{figure}[H]
+	\centering\includegraphics{Out-JPG/S2/3.jpg}
+	\caption{S2/3.pgm}
+\end{figure}
+
+\begin{figure}[H]
+	\centering\includegraphics{Out-JPG/S2/4.jpg}
+	\caption{S2/4.pgm}
+\end{figure}
+
+\begin{figure}[H]
+	\centering\includegraphics{Out-JPG/S2/5.jpg}
+	\caption{S2/5.pgm}
+\end{figure}
+
+\begin{figure}[H]
+	\centering\includegraphics{Out-JPG/S2/6.jpg}
+	\caption{S2/6.pgm}
+\end{figure}
+
+\begin{figure}[H]
+	\centering\includegraphics{Out-JPG/S2/7.jpg}
+	\caption{S2/7.pgm}
+\end{figure}
+
+\begin{figure}[H]
+	\centering\includegraphics{Out-JPG/S2/8.jpg}
+	\caption{S2/8.pgm}
+\end{figure}
+
+\begin{figure}[H]
+	\centering\includegraphics{Out-JPG/S2/9.jpg}
+	\caption{S2/9.pgm}
+\end{figure}
+
+\begin{figure}[H]
+	\centering\includegraphics{Out-JPG/S2/10.jpg}
+	\caption{S2/10.pgm}
+\end{figure}
+
+\vfill\null
+\end{multicols}
+
+\subsection*{Results}
+As seen in the next section, the transformation does an exceedingly good job at transforming the facial features to be exactly where I want them to be. The average error is always much less than 1.
+
+\subsection*{Average error}
+\lstset{style=out}
+\lstinputlisting[float=h!, multicols=2,caption={Average transformation error for fixed facial features},label={out:error}]{error.out}
+
 
 \end{document}

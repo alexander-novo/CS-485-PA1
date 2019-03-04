@@ -1,0 +1,100 @@
+Image: S1/1.pgm
+Avg. Error:
+[1.4305115e-006;
+ -4.7683716e-007]
+
+Image: S1/2.pgm
+Avg. Error:
+[-1.6689301e-006;
+ 4.7683716e-007]
+
+Image: S1/3.pgm
+Avg. Error:
+[5.4836273e-006;
+ 2.3841858e-006]
+
+Image: S1/4.pgm
+Avg. Error:
+[-3.0994415e-006;
+ -2.8610229e-006]
+
+Image: S1/5.pgm
+Avg. Error:
+[-2.3841858e-007;
+ -4.7683716e-006]
+
+Image: S1/6.pgm
+Avg. Error:
+[4.7683716e-007;
+ 3.8146973e-006]
+
+Image: S1/7.pgm
+Avg. Error:
+[-1.9073486e-006;
+ 0]
+
+Image: S1/8.pgm
+Avg. Error:
+[-3.3378601e-006;
+ -4.2915344e-006]
+
+Image: S1/9.pgm
+Avg. Error:
+[2.8610229e-006;
+ 2.8610229e-006]
+
+Image: S1/10.pgm
+Avg. Error:
+[1.6689301e-006;
+ -4.2915344e-006]
+
+Image: S2/1.pgm
+Avg. Error:
+[2.8610229e-006;
+ 9.5367432e-007]
+
+Image: S2/2.pgm
+Avg. Error:
+[-2.3841858e-006;
+ -9.5367432e-007]
+
+Image: S2/3.pgm
+Avg. Error:
+[-9.5367432e-007;
+ -1.4305115e-006]
+
+Image: S2/4.pgm
+Avg. Error:
+[-1.4305115e-006;
+ 2.8610229e-006]
+
+Image: S2/5.pgm
+Avg. Error:
+[2.8610229e-006;
+ 9.5367432e-007]
+
+Image: S2/6.pgm
+Avg. Error:
+[-9.5367432e-007;
+ 1.4305115e-006]
+
+Image: S2/7.pgm
+Avg. Error:
+[-4.7683716e-006;
+ 2.3841858e-006]
+
+Image: S2/8.pgm
+Avg. Error:
+[-4.7683716e-007;
+ 9.5367432e-007]
+
+Image: S2/9.pgm
+Avg. Error:
+[2.8610229e-006;
+ 2.8610229e-006]
+
+Image: S2/10.pgm
+Avg. Error:
+[-9.5367432e-007;
+ -6.6757202e-006]
+

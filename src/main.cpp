@@ -117,7 +117,7 @@ int main(int argc, char** argv) {
 
 	// Pull command line arguments
 	std::string inputDirectory = argv[1], outputDirectory = argv[2];
-	bool displayImageToScreen = (argc >= 3 && !strcmp("-v", argv[3]));
+	bool displayImageToScreen = (argc >= 4 && !strcmp("-v", argv[3]));
 
 	// Acknowledge choice to display images and open windows
 	if (displayImageToScreen) {
@@ -180,6 +180,40 @@ void normaliseImage(const TestImage& image, const std::string& inputDirectory,
 	// But we want to solve for P, so we need A inverse
 	// Then P = A^{-1}(P^ - b)
 	AInv = A.inv();
+
+	// Uncomment to view transformation parameters
+	// std::cout << "Image: " << image.filename << std::endl
+	//           << "A:\n"
+	//           << A << std::endl
+	//           << "b:\n"
+	//           << b << std::endl
+	//           << std::endl;
+
+	// Uncomment to view error information
+	// cv::Mat leftEyeFixed({pHat_x.at<float>(0, 0), pHat_y.at<float>(0, 0)}),
+	//     rightEyeFixed({pHat_x.at<float>(1, 0), pHat_y.at<float>(1, 0)}),
+	//     noseTipFixed({pHat_x.at<float>(2, 0), pHat_y.at<float>(2, 0)}),
+	//     mouthFixed({pHat_x.at<float>(3, 0), pHat_y.at<float>(3, 0)}), leftEye, rightEye, noseTip,
+	//     mouth, error;
+
+	// cv::transpose(p(cv::Rect(0, 0, 2, 1)), leftEye);
+	// cv::transpose(p(cv::Rect(0, 1, 2, 1)), rightEye);
+	// cv::transpose(p(cv::Rect(0, 2, 2, 1)), noseTip);
+	// cv::transpose(p(cv::Rect(0, 3, 2, 1)), mouth);
+
+	// leftEye  = A * leftEye + b;
+	// rightEye = A * rightEye + b;
+	// noseTip  = A * noseTip + b;
+	// mouth    = A * mouth + b;
+
+	// error = ((leftEye - leftEyeFixed) + (rightEye - rightEyeFixed) + (noseTip - noseTipFixed) +
+	//          (mouth - mouthFixed)) /
+	//         4;
+
+	// std::cout << "Image: " << image.filename << std::endl
+	//           << "Avg. Error:\n"
+	//           << error << std::endl
+	//           << std::endl;
 
 	for (int x = 0; x < normalImage.cols; x++) {
 		for (int y = 0; y < normalImage.rows; y++) {
